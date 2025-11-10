@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTS-->
+    <!--BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--FIM BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="menu.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+    <title>Rafael A. M. Monteiro | Ciência de Dados</title>
+</head>
+<body>
+
+    <header>
+        <div class="interface" id="header"
+        style="position: 
+        fixed; top: 0;
+        z-index: 7777;
+        "
+        >
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="Logo Rafael Monteiro" width="100" height="100">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#topo-do-site">PERFIL</a></li>
+                    <li><a href="#linha-tempo-experiencia">EXPERIÊNCIA PROFISSIONAL</a></li>
+                    <li><a href="#linha-tempo-formacao">FORMAÇÃO ACADÊMICA</a></li>
+                    <li><a href="#cursos">CURSOS</a></li>
+                    <li><a href="#portfolio">PORTIFÓLIO</a></li>
+                    <li><a href="#habilidades">HABILIDADES</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="btn-contato">
+                <a href="#formulario">
+                    <button>CONTATO</button>
+                </a>
+            </div><!--btn-contato-->
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-square-fill"></i>
+                </div><!--btn-fechar-->
+
+                <nav>
+                    <ul>
+                        <li><a href="#topo-do-site">PERFIL</a></li>
+                        <li><a href="#linha-tempo-experiencia">EXPERIÊNCIA PROFISSIONAL</a></li>
+                        <li><a href="#linha-tempo-formacao">FORMAÇÃO ACADÊMICA</a></li>
+                        <li><a href="#cursos">CURSOS</a></li>
+                        <li><a href="#portfolio">PORTIFÓLIO</a></li>
+                        <li><a href="#habilidades">HABILIDADES</a></li>
+                        <li><a href="#formulario">CONTATO</a></li>    
+                    </ul>
+    
+                </nav>
+
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!--interface-->
+    </header>
+
+    <main>
+        <section class="topo-do-site" id="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>RAFAEL AUGUSTO MORAES MONTEIRO</h1>
+                        <p>Cursando segunda graduação em Tecnologia em Ciência de Dados pela Faculdade de Tecnologia de Ourinhos (FATEC-OURINHOS). 
+                        Graduado em Letras português/inglês pela Universidade Estadual do Norte do Paraná (UENP), Campus de Cornélio Procópio. 
+                        Bolsista de Iniciação Científica da Fundação Araucária (2019-2021). 
+                        Atualmente Monitor no Programa de Monitoria de Iniciação em Desenvolvimento Tecnológico e Inovação (MIDTI), 
+                        na linha de pesquisa "Ciência de Dados e gestão de pessoas". 
+                        Tem interesse em data science e gestão de pessoas, people analytics, python, SQL, NoSQL, Power BI.</p>
+                        <div class="btn-contato">
+                            <a href="#formulario">
+                                <button>Entre em contato</button>
+                            </a>
+                        </div><!--btn-contato-->
+                    </div><!--txt-topo-site-->
+
+                    <div class="img-topo-site">
+                        <img src="images/foto-minha.png" alt="Foto Rafael Monteiro">
+                    </div><!--img-topo-site-->
+                </div><!--flex-->   
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section class="sobre" id="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/foto-minha-2.png" alt="Foto 2 Rafael Monteiro">
+                    </div><!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, SOU RAFAEL MONTEIRO.</h2>
+                        <p>Sou Rafael Augusto Moraes Monteiro, atualmente imerso na minha segunda graduação em Tecnologia em Ciência de Dados na Faculdade de Tecnologia de Ourinhos (FATEC-OURINHOS). Minha jornada acadêmica começou com uma graduação em Letras Português/Inglês pela Universidade Estadual do Norte do Paraná (UENP), onde o contato com dados do vestibular despertou em mim uma paixão inesperada. Descobri o poder que os dados têm para revelar padrões e histórias ocultas, e desde então, essa paixão só cresceu. Essa curiosidade inicial se transformou em uma verdadeira vocação, levando-me a explorar profundamente o mundo da ciência de dados, desde algoritmos e análises até visualização e gestão de informações.</p>
+                        <p>Hoje, atuo como Monitor no Programa de Monitoria de Iniciação em Desenvolvimento Tecnológico e Inovação (MIDTI), focando na linha de pesquisa "Ciência de Dados e Gestão de Pessoas". Minha trajetória me proporcionou um sólido conhecimento em Python, SQL, NoSQL e Power BI, além de habilidades práticas em people analytics e análise de dados. Sou um entusiasta do aprendizado contínuo e um aventureiro em busca de novos desafios. A cada novo projeto, me dedico a expandir minhas competências e aplicar o conhecimento adquirido de forma criativa. Estou determinado a me especializar ainda mais, almejando uma pós-graduação que me permita aprofundar meu expertise e contribuir de forma significativa para o campo da ciência de dados.</p>
+                        <div class="btn-social">
+                            <a href="https://www.linkedin.com/in/rafaelaugustomoraesmonteiro/"><button><i class="bi bi-linkedin"></i></button></a>
+                            <a href="http://lattes.cnpq.br/3366429508325981"><button><i class="bi bi-paperclip"></i></button></a>
+                            <a href="https://github.com/r-monteiro"><button><i class="bi bi-github"></i></button></a>
+                            <a href="https://www.instagram.com/rafa.monteiro.00"><button><i class="bi bi-instagram"></i></button></a>
+                        </div><!--btn-social-->
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+        <div class="separator"></div>
+
+        <section class="linha-tempo-experiencia" id="linha-tempo-experiencia">
+            <div class="container">
+                <h2 class="titulo">EXPERIÊNCIA PROFISSIONAL</span></h2>
+                <div class="timeline">
+                    <ul>
+                        <li>
+                            <div class="content">
+                                <h3>Monitoria Acadêmica MIDTI - FATEC Ourinhos</h3>
+                                <p>Monitor no Programa de Monitoria de Iniciação em Desenvolvimento Tecnológico e Inovação (MIDTI), 
+                                    na linha de pesquisa "Ciência de Dados e gestão de pessoas", 
+                                    pela Faculdade de Tecnologia de Ourinhos (FATEC-OURINHOS).</p>
+                            </div>
+                            <div class="point"></div>
+                            <div class="date">
+                                <h4>2024 presente</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content">
+                                <h3>Freelancer de Business Intelligence (BI) em plataformas online</h3>
+                                <p>Atuo de forma informal e independente para fornecer soluções analíticas e insights 
+                                    estratégicos a clientes diversos. Minhas responsabilidades incluem coleta e análise de 
+                                    dados, desenvolvimento de dashboards interativos, implementação de modelos de 
+                                    Machine Learning e entrega de relatórios personalizados.</p>
+                            </div>
+                            <div class="point"></div>
+                            <div class="date">
+                                <h4>2023 presente</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content">
+                                <h3>Professor Particular Informal</h3>
+                                <p>Ministrei aulas particulares nas disciplinas de 'Língua Portuguesa' e 'Língua 
+                                    Inglesa', atendendo alunos do ensino fundamental, médio e superior. Forneci suporte 
+                                    adicional, como tirar dúvidas, revisão de tarefas e acompanhamento regular para garantir 
+                                    o progresso contínuo dos alunos.</p>
+                            </div>
+                            <div class="point"></div>
+                            <div class="date">
+                                <h4>2021 2022</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content">
+                                <h3>Monitoria acadêmica – Universidade Estadual do Norte do Paraná;</h3>
+                                <p>Monitoria voluntária vinculada ao Centro de Letras, Comunicação e Artes (CLCA), da 
+                                    Universidade Estadual do Norte do Paraná (UENP), na disciplina de ‘Língua Inglesa I’ 
+                                    do Curso de Letras português-inglês.</p>
+                            </div>
+                            <div class="point"></div>
+                            <div class="date">
+                                <h4>2020 2021</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content">
+                                <h3>Estudante de iniciação científica – Fundação Araucária de Apoio ao 
+                                    Desenvolvimento Científico e Tecnológico do Estado do Paraná (FA)</h3>
+                                <p>Bolsista Fundação Araucária (FA), realizava atividades de pesquisa científica, 
+                                    tecnológica ou de inovação, e extensão universitária direcionadas a temas de interesse 
+                                    social e produção de artigos científicos acadêmicos.</p>
+                            </div>
+                            <div class="point"></div>
+                            <div class="date">
+                                <h4>2019 2021</h4>
+                            </div>
+                        </li>
+                    </ul>
+            </div><!--interface-->
+        </section><!--timeline-->
+        <div class="separator"></div>
+
+
+        <section class="linha-tempo-formacao" id="linha-tempo-formacao">
+            <div class="container2">
+                <h2 class="titulo">FORMAÇÃO ACADÊMICA</span></h2>
+                <div class="timeline2">
+                    <ul>
+                        <li>
+                            <div class="content2">
+                                <h3>(2023-presente)<br>Tecnólogo em Ciência de Dados</h3>
+                                <p>Faculdade de Tecnologia de Ourinhos, FATEC-OURINHOS, Brasil.</p>
+                            </div>
+                            <div class="date2">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content2">
+                                <h3>(2018-2022)<br> Graduação em Letras habilitação português-inglês</h3>
+                                <p>Universidade Estadual do Norte do Paraná, UENP-CORNÉLIO PROCÓPIO, Brasil.</p>
+                            </div>
+                            <div class="date2">
+                            </div>
+                        </li>
+                    </ul>
+            </div><!--interface-->
+        </section><!--timeline-->
+        <div class="separator"></div>
+
+
+        <section class="cursos" id="cursos">
+            <div class="interface">
+                <h2 class="titulo">CURSOS</h2>
+                <div class="flex">
+
+                    <div class="cursos-box">
+                        <i class="bi bi-bar-chart-line-fill"></i>
+                        <h3>Curso "Power BI"<br>(20h)</h3>  
+                    </div><!--cursos-box-->
+
+                    <div class="cursos-box">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>Ferramentas para Ciência de Dados<br> (4h)</h3>
+                    </div><!--cursos-box-->
+
+                    <div class="cursos-box">
+                        <i class="bi bi-chat"></i>
+                        <h3>Cursos de Inglês<br> (680h)</h3>  
+                    </div><!--cursos-box-->                    
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--cursos-->
+        <div class="separator"></div>
+
+
+        <section class="portfolio" id="portfolio">
+            <div class="interface">
+                <h2 class="titulo">MEU PORTFÓLIO</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url(images/port1.png);">
+                        <div class="overlay">Projeto Moema 1</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port2.png);">
+                        <div class="overlay">Projeto Moema 2</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port3.png);">
+                        <div class="overlay">Projeto Moema 3</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port4.png);">
+                        <div class="overlay">Projeto Moema 4</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port5.png);">
+                        <div class="overlay">Projeto Moema 5</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port6.png);">
+                        <div class="overlay">Projeto Moema 6</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port7.png);">
+                        <div class="overlay">Projeto Moema 7</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/port8.png);">
+                        <div class="overlay">Projeto Moema 8</div>
+                    </div>
+
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--portfolio-->
+        <div class="separator"></div>
+
+
+        <section class="publicacoes" id="publicacoes">
+            <div class="interface">
+                <h2 class="titulo">TRABALHOS COMPLETOS PUBLICADOS</h2>
+                <div class="flex">
+        
+                    <a href="https://revistas.unipam.edu.br/index.php/index/search/authors/view?givenName=Rafael%20Augusto&familyName=Moraes%20Monteiro&affiliation=Universidade%20Estadual%20do%20Norte%20do%20Paraná%20%28UENP%29&country=BR&authorName=Moraes%20Monteiro%2C%20Rafael%20Augusto" class="publicacoes-box">
+                        <i class="bi bi-file-earmark-text-fill"></i>
+                        <h3>MONTEIRO, R. A. M.; STRIQUER, M. S. D. Minha redação não é nota dez? Por quê?. CRÁTILO: REVISTA DE ESTUDOS LINGUÍSTICOS E LITERÁRIOS, v. 14, p. 134-147, 2021.</h3>  
+                    </a><!--publicacoes-box-->
+        
+                    <a href="https://sge.uenp.edu.br/files/Submissaoxarquivos/car_submissao/01_11_2021documento7d8717fdc5a.pdf" class="publicacoes-box">
+                        <i class="bi bi-file-earmark-text-fill"></i>
+                        <h3>MONTEIRO, R. A. M.; STRIQUER, M. S. D. Quem tira zero na redação do vestibular?. In: VII Encontro de Integração, 2021, Cornélio Procópio. Anais do VII Encontro de integração, 2021.</h3>  
+                    </a><!--publicacoes-box-->
+        
+                    <a href="http://integracao.uenp.edu.br/2020/" class="publicacoes-box">
+                        <i class="bi bi-file-earmark-text-fill"></i>
+                        <h3>MONTEIRO, R. A. M.; STRIQUER, M. S. D. O gênero textual Artigo de Opinião como redação de vestibular. In: VI Encontro de Integração, 2020, Cornélio Procópio. Anais do VI Encontro de integração, 2020. p. 2220-2226.</h3>  
+                    </a><!--publicacoes-box-->
+        
+                    <a href="https://c171e6b5c9.cbaul-cdnwnd.com/db44946c14f7a87f1431aedaff317b58/200000016-803b5813a1/2018%20-%20SIDIALE%20-%20TEXTOS%20COMPLETOS-8.pdf?ph=c171e6b5c9" class="publicacoes-box">
+                        <i class="bi bi-file-earmark-text-fill"></i>
+                        <h3>MONTEIRO, R. A. M.; BASSETTO, L. M. T. A importância da compreensão da intertextualidade na música 'Além do Espelho', de João Nogueira. In: IV Simpósio ProfLetras/UENP & II SIDIALE - Simpósio Diálogos Linguísticos e Ensino, 2018, Cornélio Procópio. Anais do SIDIALE: textos completos, 2018. p. 64-73.</h3>  
+                    </a><!--publicacoes-box-->
+        
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--publicacoes-->
+        <div class="separator"></div>
+
+        <section class="habilidades" id="habilidades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS HABILIDADES</span></h2>
+                <div class="flex">
+                    <div class="habilidades-box">
+                        <i class="bi bi-filetype-py"></i>
+                        <h3>Linguagem Python</h3>                      
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Linguagem R</h3>
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-filetype-sql"></i>
+                        <h3>SQL e NoSQL</h3>
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-calculator"></i>
+                        <h3>Estatística</h3>                       
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-bar-chart-line-fill"></i>
+                        <h3>Power BI</h3>  
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-clipboard-data"></i>
+                        <h3>Análise e visualização de dados</h3>  
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-microsoft"></i>
+                        <h3>Microsoft Office</h3>  
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-kanban"></i>
+                        <h3>Metodologias Ágeis SCRUM, KANBAN, LEAN</h3>  
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-chat"></i>
+                        <h3>Idioma Inglês Avançado</h3>  
+                    </div><!--habilidades-box-->
+
+                    <div class="habilidades-box">
+                        <i class="bi bi-chat"></i>
+                        <h3>Idioma Espanhol Intermediário</h3>  
+                    </div><!--habilidades-box-->
+
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--habilidades-->
+        <div class="separator"></div>
+
+        <section class="formulario" id="formulario">
+            <div class="interface">
+                <h2 class="titulo">FALA COMIGO</span></h2>
+                <form action="https://formspree.io/f/xqazenvz" method="POST">
+                    <input type="text" name="nome" placeholder="Seu nome completo:" required>
+                    <input type="email" name="email" placeholder="Seu email:" required>
+                    <input type="text" name="celular" placeholder="Seu celular (OPCIONAL):">
+                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                </form>
+            </div><!--interface-->
+        </section><!--formulario-->
+        <div class="separator"></div>
+        
+
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/logo.png" alt="Logo footer Rafael Monteiro" width="150" height="150">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.linkedin.com/in/rafaelaugustomoraesmonteiro/"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="http://lattes.cnpq.br/3366429508325981"><button><i class="bi bi-paperclip"></i></button></a>
+                        <a href="https://github.com/r-monteiro"><button><i class="bi bi-github"></i></button></a>
+                        <a href="https://www.instagram.com/rafa.monteiro.00"><button><i class="bi bi-instagram"></i></button></a>
+                    </div><!--btn-social-->
+                </div>
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i><a href="mailto:data.rafaelmonteiro@gmail.com">data.rafaelmonteiro@gmail.com</a></p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+
+    <!-- SCROLLAR O MOUSE E ELE MUDAR NO CABEÇALHO AUTOMATICAMENTE-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('header nav.menu-desktop ul li a');
+            const sections = document.querySelectorAll('section');
+            
+            function updateActiveSection() {
+                let currentSection = '';
+        
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+        
+                menuItems.forEach(item => {
+                    item.classList.remove('selected');
+                    if (item.getAttribute('href').includes(currentSection)) {
+                        item.classList.add('selected');
+                    }
+                });
+            }
+        
+            function handleMenuClick(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+        
+                menuItems.forEach(item => item.classList.remove('selected'));
+                this.classList.add('selected');
+            }
+        
+            menuItems.forEach(item => item.addEventListener('click', handleMenuClick));
+            window.addEventListener('scroll', updateActiveSection);
+        });
+        </script>
+        
+    
+</body>
+</html>
