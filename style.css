@@ -1,0 +1,241 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(11,12,16);
+    color: rgb(197,198,199);
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===== FUNDO TECNOLÓGICO ===== */
+#tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(11, 12, 16, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+    z-index: 1000;
+}
+
+.header-container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.interface {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ===== MENU DESKTOP ===== */
+.menu-desktop ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu-desktop a {
+    text-decoration: none;
+    color: rgb(102,252,241); /* ciano claro */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu-desktop a:hover, 
+.menu-desktop a.selected {
+    color: rgb(69,162,158); /* ciano escuro */
+}
+
+/* ===== BOTÃO ===== */
+.btn-contato button {
+    background-color: rgb(69,162,158);
+    border: none;
+    color: rgb(11,12,16);
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-contato button:hover {
+    background-color: rgb(102,252,241);
+}
+
+/* ===== MENU MOBILE ===== */
+.btn-abrir-menu {
+    display: none;
+    color: rgb(102,252,241);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 65%;
+    height: 100%;
+    background-color: rgb(31,40,51);
+    transition: right 0.4s ease;
+    padding: 40px 20px;
+    z-index: 1001;
+}
+
+.menu-mobile.abrir {
+    right: 0;
+}
+
+.menu-mobile .btn-fechar {
+    font-size: 1.8rem;
+    color: rgb(102,252,241);
+    text-align: right;
+    cursor: pointer;
+}
+
+.menu-mobile nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-mobile nav ul li {
+    margin: 20px 0;
+}
+
+.menu-mobile nav ul li a {
+    text-decoration: none;
+    color: rgb(102,252,241);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.menu-mobile nav ul li a:hover {
+    color: rgb(69,162,158);
+}
+
+/* Overlay do menu mobile */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay-menu.mostrar {
+    display: block;
+}
+
+/* ===== TOPO ===== */
+.topo-do-site {
+    padding: 140px 0 60px;
+    background: linear-gradient(to bottom right, rgb(11,12,16), rgb(31,40,51));
+    text-align: left;
+}
+
+.txt-topo-site {
+    max-width: 550px;
+}
+
+.txt-topo-site h1 {
+    color: rgb(102,252,241);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.txt-topo-site h2 {
+    color: rgb(69,63,119); /* Roxo principal */
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.txt-topo-site p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+    background-color: rgb(31,40,51);
+    padding: 80px 0;
+}
+
+.sobre h2 {
+    color: rgb(102,252,241);
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: rgb(11,12,16);
+    color: rgb(197,198,199);
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .btn-social button {
+    background: transparent;
+    border: 1px solid rgb(69,162,158);
+    color: rgb(69,162,158);
+    border-radius: 50%;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+footer .btn-social button:hover {
+    background: rgb(69,162,158);
+    color: rgb(11,12,16);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    .menu-desktop {
+        display: none;
+    }
+
+    .btn-contato {
+        display: none;
+    }
+
+    .btn-abrir-menu {
+        display: block;
+    }
+}
