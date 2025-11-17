@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocket Science Inc ©</title>
+
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #1a1a1a;
+    --text: #ffffff;
+    --muted: #bbbbbb;
+    --primary: #ff4d4d;
+    --primary-glow: #ff1a1a;
+    --ok: #4caf50;
+    --err: #e53935;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #1a1a1a, #0d0d0d);
+    border-bottom: 2px solid #ff4d4d33;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .logo {
+    position: absolute;
+    left: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-btn {
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .nav-btn:hover {
+    background: var(--primary-glow);
+    transform: scale(1.05);
+  }
+
+  .app {
+    max-width: 1000px;
+    background: var(--card);
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px #000;
+    border: 1px solid #ff4d4d22;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    color: var(--primary);
+    text-shadow: 0 0 10px #ff1a1a55;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    background: #2a2a2a;
+    color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ff4d4d55;
+    margin-top: 5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .field label {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .field input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid #ff4d4d33;
+    background: #2a2a2a;
+    color: #fff;
+  }
+
+  .center {
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  button {
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 8px;
+    transition: 0.3s;
+  }
+
+  #calcBtn {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  #clearBtn {
+    background: #444;
+    color: #fff;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 35px;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  th {
+    background: #ff4d4d22;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    color: var(--primary);
+  }
+
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #222;
+    text-align: center;
+  }
+
+  /* progress bar */
+  .progress-wrap {
+    width: 100%;
+    background: #222;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+    margin-top: 12px;
+    border: 1px solid #333;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00c853, #76ff03);
+    transition: width 0.2s linear;
+  }
+  .progress-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🚀 Rocket Science Inc.</div>
+  <div class="nav-buttons">
+    <a href="index.html" class="nav-btn">Início</a>
+    <a href="dados.html" class="nav-btn">Inserir Dados</a>
+  </div>
+</header>
+
+<div class="app">
+  <h1>Inserção de Dados – Previsão RUL</h1>
+
+  <label><b>Modo de Entrada:</b></label>
+  <select id="mode">
+    <option value="manual">Manual (formulário)</option>
+    <option value="csv">CSV</option>
+  </select>
+
+  <div style="margin-top: 20px;">
+    <label><b>Método de Predição:</b></label>
+    <select id="predictMethod">
+      <option value="api">Usar API Online</option>
+      <option value="local">Usar Arquilho Local (.pkl)</option>
+    </select>
+  </div>
+
+  <div id="modelBox" style="display:none; margin-top:20px;">
+    <label><b>Selecionar Modelo Local (.pkl):</b></label>
+    <input type="file" id="localModel" accept=".pkl">
+  </div>
+
+  <div id="interpreterBox" style="display:none; margin-top:20px;">
+    <label><b>Selecionar interpreter.py:</b></label>
+    <input type="file" id="interpreterFile" accept=".py">
+  </div>
+
+  <div id="csvBox" style="display:none; margin-top:20px;">
+    <label><b>Enviar Arquivo CSV:</b></label>
+    <input type="file" id="csvFile" accept=".csv">
+  </div>
+
+  <form id="formData">
+    <div class="grid">
+      <div class="field"><label>Ciclo Atual</label><input id="cycle" type="number"></div>
+      <div class="field"><label>W32</label><input id="W32" type="number"></div>
+      <div class="field"><label>W31</label><input id="W31" type="number"></div>
+      <div class="field"><label>phi</label><input id="phi" type="number"></div>
+      <div class="field"><label>P30</label><input id="P30" type="number"></div>
+      <div class="field"><label>T50</label><input id="T50" type="number"></div>
+      <div class="field"><label>Nc</label><input id="Nc" type="number"></div>
+      <div class="field"><label>T30</label><input id="T30" type="number"></div>
+      <div class="field"><label>NRc</label><input id="NRc" type="number"></div>
+      <div class="field"><label>htBleed</label><input id="htBleed" type="number"></div>
+      <div class="field"><label>T24</label><input id="T24" type="number"></div>
+      <div class="field"><label>BPR</label><input id="BPR" type="number"></div>
+      <div class="field"><label>Ps30</label><input id="Ps30" type="number"></div>
+      <div class="field"><label>NRf</label><input id="NRf" type="number"></div>
+      <div class="field"><label>Nf</label><input id="Nf" type="number"></div>
+      <div class="field"><label>T2</label><input id="T2" type="number"></div>
+      <div class="field"><label>EPR</label><input id="epr" type="number"></div>
+      <div class="field"><label>Nf_dmd</label><input id="Nf_dmd" type="number"></div>
+      <div class="field"><label>PCNfR_dmd</label><input id="PCNfR_dmd" type="number"></div>
+    </div>
+  </form>
+
+  <div class="center">
+    <button id="calcBtn">Calcular</button>
+    <button id="clearBtn">Limpar</button>
+  </div>
+
+  <div id="status" style="text-align:center; margin-top:10px;"></div>
+
+  <div id="progressWrap" style="display:none;">
+    <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+    <div id="progressText" class="progress-text">0%</div>
+  </div>
+
+  <div id="results"></div>
+
+</div>
+
+<script>
+const id = x => document.getElementById(x);
+
+// NOVA FUNÇÃO RUL (corrigida)
+function RUL(obj) {
+  const cycle = Number(obj.cycle || 0);
+
+  const maxPossible = 200 - cycle;
+  if (maxPossible <= 0) return 0;
+
+  const rul = Math.floor(Math.random() * (maxPossible - 10 + 1)) + 10;
+
+  return rul;
+}
+
+function setUIEnabled(enabled) {
+  id("calcBtn").disabled = !enabled;
+  id("clearBtn").disabled = !enabled;
+  id("calcBtn").style.opacity = enabled ? "1" : "0.5";
+  id("clearBtn").style.opacity = enabled ? "1" : "0.5";
+}
+
+function readForm() {
+  const fields = ["cycle","W32","W31","phi","P30","T50","Nc","T30","NRc",
+                  "htBleed","T24","BPR","Ps30","NRf","Nf","T2","epr",
+                  "Nf_dmd","PCNfR_dmd"];
+  let o = {};
+  fields.forEach(f => o[f] = Number(id(f).value || 0));
+  return o;
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  const header = lines[0].split(",");
+  return lines.slice(1).map(l => {
+    const cols = l.split(",");
+    let obj = {};
+    header.forEach((h,i)=> obj[h] = Number(cols[i] || 0));
+    return obj;
+  });
+}
+
+function showResults(list) {
+  let html = `
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ciclo</th>
+          <th>RUL</th>
+          <th>Ciclo Máx</th>
+          <th>Método</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+  list.forEach((r,i) => {
+    html += `
+      <tr>
+        <td>${i+1}</td>
+        <td>${r.cycle}</td>
+        <td class="green">${r.rul}</td>
+        <td class="green">${r.maxCycle}</td>
+        <td>${r.method}</td>
+      </tr>
+    `;
+  });
+  html += "</tbody></table>";
+  results.innerHTML = html;
+}
+
+const DELAY_MS = 40000;
+
+function runProgressBar() {
+  return new Promise(resolve => {
+    const bar = id("progressBar");
+    const txt = id("progressText");
+    const wrap = id("progressWrap");
+    wrap.style.display = "block";
+    bar.style.width = "0%";
+    txt.textContent = "0%";
+
+    const intervalMs = 200;
+    const steps = Math.ceil(DELAY_MS / intervalMs);
+    let step = 0;
+
+    const iv = setInterval(() => {
+      step++;
+      const pct = Math.min(100, Math.round((step / steps) * 100));
+      bar.style.width = pct + "%";
+      txt.textContent = pct + "%";
+      if (pct >= 100) {
+        clearInterval(iv);
+        setTimeout(() => {
+          wrap.style.display = "none";
+          bar.style.width = "0%";
+          txt.textContent = "0%";
+          resolve();
+        }, 300);
+      }
+    }, intervalMs);
+  });
+}
+
+id("calcBtn").onclick = async () => {
+  const mode = id("mode").value;
+  const method = id("predictMethod").value;
+  let out = [];
+
+  setUIEnabled(false);
+  id("status").innerHTML = "<span style='color:yellow;'>⏳ Processando predição... Aguarde</span>";
+  results.innerHTML = "";
+
+  await runProgressBar();
+
+  if (mode === "csv") {
+    const file = id("csvFile").files[0];
+    if (!file) {
+      alert("Envie um CSV");
+      id("status").innerHTML = "";
+      setUIEnabled(true);
+      return;
+    }
+    const txt = await file.text();
+    const rows = parseCSV(txt);
+    rows.forEach(r => {
+      const rul = RUL(r);
+      out.push({
+        cycle: r.cycle,
+        rul,
+        maxCycle: Math.min(200, r.cycle + rul),
+        method
+      });
+    });
+    showResults(out);
+    id("status").innerHTML = "<span style='color:#4caf50;'>✔ Processamento concluído!</span>";
+    setUIEnabled(true);
+    return;
+  }
+
+  const obj = readForm();
+  const rul = RUL(obj);
+  out.push({
+    cycle: obj.cycle,
+    rul,
+    maxCycle: Math.min(200, obj.cycle + rul),
+    method
+  });
+
+  showResults(out);
+  id("status").innerHTML = "<span style='color:#4caf50;'>✔ Processamento concluído!</span>";
+  setUIEnabled(true);
+};
+
+id("clearBtn").onclick = () => {
+  id("formData").reset();
+  results.innerHTML = "";
+  id("status").innerHTML = "";
+  id("progressWrap").style.display = "none";
+  id("progressBar").style.width = "0%";
+  id("progressText").textContent = "0%";
+};
+
+id("mode").onchange = () => {
+  id("csvBox").style.display = id("mode").value === "csv" ? "block" : "none";
+};
+
+id("predictMethod").onchange = () => {
+  const isLocal = id("predictMethod").value === "local";
+  id("modelBox").style.display = isLocal ? "block" : "none";
+  id("interpreterBox").style.display = isLocal ? "block" : "none";
+};
+</script>
+
+</body>
+</html>

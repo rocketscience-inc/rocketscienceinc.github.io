@@ -1,209 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo2.png">
-    <title>Science Rocket Inc.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rocket Science Inc ©</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #1a1a1a, #0d0d0d);
+  border-bottom: 2px solid #ff4d4d33;
+}
+
+    .logo {
+      position: absolute;
+      left: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff4d4d;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-btn {
+      padding: 10px 20px;
+      background: #ff4d4d;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: #ff1a1a;
+      transform: scale(1.05);
+    }
+
+    /* TÍTULO E TEXTO */
+    h1 {
+      font-size: 3rem;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      color: #ff4d4d;
+    }
+
+    p {
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-size: 1.2rem;
+      color: #dddddd;
+    }
+
+    /* BOTÃO PRINCIPAL */
+    .btn {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      background: #ff4d4d;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #ff1a1a;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer pre {
+      margin: 0;
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+
+  </style>
 </head>
 <body>
 
-    <!-- Canvas de fundo tecnológico -->
-    <canvas id="tech-bg"></canvas>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">🚀 Rocket Science Inc.</div>
 
-    <!-- ======= HEADER ======= -->
-    <header>
-        <div class="interface flex header-container">
-            <div class="logo">
-                <a href="#home">
-                    <img src="images/logo2.png" alt="Logo Science Rocket" width="100" height="100">
-                </a>
-            </div>
+    <div class="nav-buttons">
+      <a href="index.html" class="nav-btn">Início</a>
+      <a href="dados.html" class="nav-btn">Inserir Dados</a>
+    </div>
+  </header>
 
-            <!-- Menu desktop -->
-            <nav class="menu-desktop">
-                <ul>
-                    <li><a href="#home" class="selected">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="simulacao.html">Simulação</a></li>
-                </ul>
-            </nav>
+  <h1>Rocket Science Inc © – API de Sensores</h1>
 
-            <div class="btn-contato">
-                <a href="simulacao.html">
-                    <button>🚀 Iniciar Simulação</button>
-                </a>
-            </div>
+  <p>
+    Esta aplicação WEB recebe dados de sensores do motor — como temperatura, pressão e empuxo —
+    e utiliza cálculos treinados em Python para prever o ciclo de desligamento do motor.
+    Clique no botão abaixo para acessar a área de inserção dos dados.
+  </p>
 
-            <div class="btn-abrir-menu" id="btn-menu">
-                <i class="bi bi-list"></i>
-            </div>
-        </div>
+  <a href="dados.html" class="btn">INSERIR DADOS</a>
 
-        <!-- Menu mobile -->
-        <div class="menu-mobile" id="menu-mobile">
-            <div class="btn-fechar"><i class="bi bi-x-square-fill"></i></div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="simulacao.html">Simulação</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="overlay-menu" id="overlay-menu"></div>
-    </header>
+  <footer>
+    <pre>
+Mateus N. R. Salgueiro
+Paulo E. T. Generozo
+Thomas J. A. Batista
+Rafael A. M. Monteiro
 
-    <!-- ======= MAIN ======= -->
-    <main>
-        <section class="topo-do-site" id="home">
-            <div class="interface flex">
-                <div class="txt-topo-site">
-                    <h1>Science Rocket Inc.</h1>
-                    <h2>Projeto Integrador V — Ciência de Dados — FATEC Ourinhos</h2>
-                    <p>
-                        Bem-vindo(a)! Insira os dados coletados pelos sensores e descubra com precisão
-                        em qual ciclo o motor do foguete será desligado. Nosso sistema utiliza cálculos
-                        em Python para prever o comportamento do motor em tempo real.
-                    </p>
-                    <div class="btn-contato">
-                        <a href="simulacao.html">
-                            <button>🚀 Iniciar Simulação</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="img-topo-site">
-                    <img src="images/logo2.png" alt="Foguete Science Rocket" width="400">
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção sobre -->
-        <section class="sobre" id="sobre">
-            <div class="interface flex">
-                <div class="img-sobre">
-                    <img src="images/team.png" alt="Equipe Science Rocket" width="350">
-                </div>
-                <div class="txt-sobre">
-                    <h2>Sobre o Projeto</h2>
-                    <p>
-                        O sistema Science Rocket Inc. foi desenvolvido com o objetivo de aplicar técnicas de 
-                        <strong>Ciência de Dados</strong> para análise e predição de desempenho de motores de foguete. 
-                        Através de dados de sensores (temperatura, pressão e empuxo), o sistema realiza cálculos automatizados
-                        para determinar o ciclo de parada ideal do motor, garantindo maior segurança e precisão nas simulações.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ======= FOOTER ======= -->
-    <footer>
-        <div class="interface">
-            <div class="line-footer flex">
-                <div class="logo-footer">
-                    <img src="images/logo2.png" alt="Logo Science Rocket" width="120" height="120">
-                </div>
-                <div class="btn-social">
-                    <a href="#"><button><i class="bi bi-github"></i></button></a>
-                    <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
-                    <a href="#"><button><i class="bi bi-envelope-fill"></i></button></a>
-                </div>
-            </div>
-            <div class="line-footer borda">
-                <p>© 2025 Science Rocket Inc. | Desenvolvido com 🧠 e muito esforço.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCRIPT MENU MOBILE -->
-    <script>
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMobile = document.getElementById('menu-mobile');
-        const overlay = document.getElementById('overlay-menu');
-        const btnFechar = document.querySelector('.btn-fechar');
-
-        btnMenu.addEventListener('click', () => {
-            menuMobile.classList.add('abrir');
-            overlay.classList.add('mostrar');
-        });
-
-        overlay.addEventListener('click', () => {
-            menuMobile.classList.remove('abrir');
-            overlay.classList.remove('mostrar');
-        });
-
-        btnFechar.addEventListener('click', () => {
-            menuMobile.classList.remove('abrir');
-            overlay.classList.remove('mostrar');
-        });
-    </script>
-
-    <!-- SCRIPT FUNDO TECNOLÓGICO -->
-    <script>
-        const canvas = document.getElementById('tech-bg');
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        });
-
-        const particles = [];
-        for (let i = 0; i < 100; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5
-            });
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            particles.forEach(p => {
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x < 0 || p.x > width) p.vx *= -1;
-                if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgb(139,63,119)';
-                ctx.fill();
-            });
-
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    if (dist < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = 'rgba(139,63,119,0.2)';
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-    </script>
+© 2025 Rocket Science Inc - Feito com 🧠 e muito esforço.
+    </pre>
+  </footer>
 
 </body>
 </html>
